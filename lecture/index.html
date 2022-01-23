@@ -24,19 +24,22 @@
                     if(parseInt(this.state.value)=== this.state.first * this.state.second)
                     {
                         //temp = value;
-                        this.setState({
-                            result: '정답 '+ this.state.value,
+                        this.setState((prevState)=>{
+                            return {result: '정답 '+ prevState.value,
                             first: Math.ceil(Math.random()*9),
                             second: Math.ceil(Math.random()*9),
                             value: '',
+                        };
                         });
                         
                         //
 
                     }else{
-                        this.setState({
-                            result:'땡 '+ this.state.value,
+                        this.setState((prevState)=>{
+                            return {
+                            result:'땡 '+ prevState.value,
                             value: '',
+                            };
                         });
                      
                     }
